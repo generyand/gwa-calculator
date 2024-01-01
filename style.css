@@ -1,0 +1,201 @@
+* {
+}
+
+html,
+body {
+  height: 100%;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  text-transform: uppercase;
+  padding: 10% 0;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  margin: 0 5%;
+  font-size: .75rem;
+}
+
+input[type="number"],
+input[type="text"] {
+  display: flex;
+  width: 100%; /* Expand inputs to fill cell width */
+  padding: 5px 10px; /* Add padding for better readability */
+  border: none; /* Add a border */
+  text-align: center;
+  flex-wrap: wrap;
+}
+
+input[type="number"]:focus,
+input[type="text"]:focus {
+  border: none;
+  outline: none;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type="number"] {
+  -moz-appearance: textfield;
+}
+
+td {
+  /* width: 100%; Expand inputs to fill cell width */
+  padding: 5px 10px; /* Add padding for better readability */
+  border: 1px solid #ccc;
+  border-collapse: separate;
+  margin: 0;
+  gap: 0;
+  text-align: center;
+}
+
+table {
+  border-collapse: collapse;
+  border-radius: 0.5rem;
+}
+
+table td,
+table th {
+  border: 1px solid black;
+}
+
+td:focus-within {
+  border: 2px solid rgb(39, 39, 39);
+  border-collapse: collapse;
+}
+
+#add-row-btn {
+  margin-bottom: 16px;
+}
+
+/*
+#add-row-btn {
+  background-color: #ffffff;
+  border: 1px solid rgb(209, 213, 219);
+  border-radius: 0.5rem;
+  box-sizing: border-box;
+  color: #111827;
+  font-family: "Inter var", ui-sans-serif, system-ui, -apple-system, system-ui,
+    "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", sans-serif,
+    "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+  font-size: 0.875rem;
+  font-weight: 600;
+  line-height: 1.25rem;
+  padding: 0.75rem 1rem;
+  text-align: center;
+  text-decoration: none #d1d5db solid;
+  text-decoration-thickness: auto;
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  cursor: pointer;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+} */
+
+#add-row-btn:hover {
+  background-color: rgb(249, 250, 251);
+}
+
+#add-row-btn:focus {
+  outline: 2px solid transparent;
+  outline-offset: 2px;
+}
+
+#add-row-btn:focus-visible {
+  box-shadow: none;
+}
+
+.plus-button {
+  border: 2px solid lightgrey;
+  background-color: #fff;
+  font-size: 16px;
+  height: 2.5em;
+  width: 2.5em;
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+
+  /* &:after,
+  &:before {
+    content: "";
+    display: block;
+    background-color: grey;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+
+  &:before {
+    height: 1em;
+    width: 0.2em;
+  }
+
+  &:after {
+    height: 0.2em;
+    width: 1em;
+  } */
+}
+
+.plus-button:after,
+.plus-button:before {
+  content: "";
+  display: block;
+  background-color: grey;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.plus-button:after {
+  height: 0.2em;
+  width: 1em;
+}
+
+.plus-button:before {
+  height: 1em;
+  width: 0.2em;
+}
+
+.plus-button--small {
+  font-size: 12px;
+}
+
+.plus-button--large {
+  font-size: 22px;
+}
+
+#calculate-gwa-btn {
+  width: 100%;
+  display: inline-block;
+  outline: none;
+  cursor: pointer;
+  padding: 4px 16px;
+  background-color: #0070d2;
+  border-radius: 0.25rem;
+  border: 1px solid #0070d2;
+  color: #fff;
+  /* font-size: 13px; */
+  line-height: 30px;
+  font-weight: 400;
+  text-align: center;
+}
+
+#calculate-gwa-btn:hover {
+  background-color: #005fb2;
+  border-color: #005fb2;
+}

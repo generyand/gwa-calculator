@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>GWA Calculator</title>
+    <link rel="stylesheet" href="reset.css" />
+    <link rel="stylesheet" href="style.css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <table id="table">
+        <thead>
+          <tr>
+            <td>Subject Name</td>
+            <td>No. of units</td>
+            <td>Grade</td>
+          </tr>
+        </thead>
+        <tbody>
+          <tr id="subject-1">
+            <td><input placeholder="Subject 1" type="text" /></td>
+            <td><input type="number" required /></td>
+            <td><input type="number" required /></td>
+          </tr>
+
+          <tr id="subject-2">
+            <td><input placeholder="Subject 2" type="text" /></td>
+            <td><input type="number" required /></td>
+            <td><input type="number" required /></td>
+          </tr>
+
+          <tr id="subject-3">
+            <td><input placeholder="Subject 3" type="text" /></td>
+            <td><input type="number" required /></td>
+            <td><input type="number" required /></td>
+          </tr>
+
+          <tr id="subject-4">
+            <td><input placeholder="Subject 4" type="text" /></td>
+            <td><input type="number" required /></td>
+            <td><input type="number" required /></td>
+          </tr>
+        </tbody>
+      </table>
+      <button class="plus-button" id="add-row-btn"></button>
+      <div class="gwa">GWA: -</div>
+      <button id="calculate-gwa-btn">CALCULATE GWA</button>
+    </div>
+  </body>
+</html>
