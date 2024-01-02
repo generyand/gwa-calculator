@@ -2,10 +2,13 @@
 
 const tbody = document.querySelector("tbody");
 const addRowBtn = document.querySelector("#add-row-btn");
+const removeRowBtn = document.querySelector("#remove-row-btn");
+const clearBtn = document.querySelector("#clear-btn");
 const calcBtn = document.querySelector("#calculate-gwa-btn");
 
+/* Add Row */
 addRowBtn.addEventListener("click", () => {
-  const tableRows = document.querySelectorAll("tbody > *");
+  const tableRows = document.querySelectorAll("tbody > tr");
   const table = document.getElementById("table");
   const row = table.insertRow();
   row.setAttribute("id", `subject-${tableRows.length + 1}`);
@@ -19,10 +22,30 @@ addRowBtn.addEventListener("click", () => {
   cell3.innerHTML = '<input type="number" required>';
 });
 
+/* Remove Row */
+removeRowBtn.addEventListener("click", () => {
+  const tableRows = document.querySelectorAll("tbody > tr");
+  const lastChild = tableRows[tableRows.length - 1];
+
+  if (tableRows.length != 1) tbody.removeChild(lastChild);
+});
+
+/* Clear Button */ /* THIS IS NOT WORKING! */
+clearBtn.addEventListener("click", () => {
+  const tableRows = document.querySelectorAll("tbody > *");
+  for (let i = 1; i <= tableRows.length; i++) {
+    document.querySelector(`#subject-${i} > td:nth-child(1) > input`).value =
+      "";
+    document.querySelector(`#subject-${i} > td:nth-child(2) > input`).value =
+      "";
+    document.querySelector(`#subject-${i} > td:nth-child(3) > input`).value =
+      "";
+  }
+});
+
+/* Calculate GWA */
 calcBtn.addEventListener("click", () => {
   let subjects = [];
-  let totalUnits = 0;
-  let overAllTotalGrade = 0;
   const tableRows = document.querySelectorAll("tbody > *");
 
   for (let i = 1; i <= tableRows.length; i++) {
@@ -45,24 +68,24 @@ calcBtn.addEventListener("click", () => {
     subjects.push(subject);
   }
 
-  overAllTotalGrade = subjects.reduce((accumulator, currentValue) => {
+  const overAllTotalGrade = subjects.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.gradeTotal;
   }, 0);
 
-  totalUnits = subjects.reduce((accumulator, currentValue) => {
+  const totalUnits = subjects.reduce((accumulator, currentValue) => {
     return accumulator + currentValue.units;
   }, 0);
 
   const gwa = (overAllTotalGrade / totalUnits).toFixed(2);
-  console.log(overAllTotalGrade);
-  console.log(totalUnits);
 
   document.querySelector(".gwa").innerText = `GWA: ${gwa}`;
-
-  console.table(subjects);
 });
 
 /* Himo og object na naay subject.name, subject.units, subject.grade. Every tr should be looped. */
 /* Then i push sya sa subjects na array */
 
 /* Your way of adding a subject should be through appendchild */
+
+/* Add a remove and clear button */
+/* When the user clicks the remove button, it removes the last row */
+/* When the user clicks the clear button, it clears all the inputs */
