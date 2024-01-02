@@ -239,6 +239,12 @@ td:focus-within {
     /* background-color: red; */
   }
 
+  #calculate-gwa-btn:hover,
+  #clear-btn:hover {
+    background-color: #005fb2;
+    border-color: #005fb2;
+  }
+
   .container {
     margin: 64px 5%;
     overflow-y: scroll;
