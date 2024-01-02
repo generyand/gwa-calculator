@@ -170,6 +170,10 @@ table {
   border-radius: 0.5rem;
 }
 
+thead {
+  font-weight: 500;
+}
+
 table td,
 table th {
   border: 1px solid var(--secondary);
