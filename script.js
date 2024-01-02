@@ -78,7 +78,12 @@ calcBtn.addEventListener("click", () => {
 
   const gwa = (overAllTotalGrade / totalUnits).toFixed(2);
 
-  document.querySelector(".gwa").innerText = `GWA: ${gwa}`;
+  if (gwa === 'NaN') {
+    alert('You have to input some grades to calculate the GWA.');
+  } else {
+    document.querySelector(".gwa").innerText = `GWA: ${gwa}`;
+  }
+
 });
 
 /* Himo og object na naay subject.name, subject.units, subject.grade. Every tr should be looped. */
