@@ -5,6 +5,12 @@ const addRowBtn = document.querySelector("#add-row-btn");
 const removeRowBtn = document.querySelector("#remove-row-btn");
 const clearBtn = document.querySelector("#clear-btn");
 const calcBtn = document.querySelector("#calculate-gwa-btn");
+const checkbox = document.getElementById("checkbox")
+
+/* Dark Mode */
+checkbox.addEventListener("change", () => {
+  document.body.classList.toggle("dark")
+})
 
 /* Add Row */
 addRowBtn.addEventListener("click", () => {
