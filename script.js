@@ -18,8 +18,8 @@ addRowBtn.addEventListener("click", () => {
   cell1.innerHTML = `<input placeholder="Subject ${
     tableRows.length + 1
   }" type="text">`;
-  cell2.innerHTML = '<input type="number" required>';
-  cell3.innerHTML = '<input type="number" required>';
+  cell2.innerHTML = '<input type="number">';
+  cell3.innerHTML = '<input type="number">';
 });
 
 /* Remove Row */
@@ -78,12 +78,11 @@ calcBtn.addEventListener("click", () => {
 
   const gwa = (overAllTotalGrade / totalUnits).toFixed(2);
 
-  if (gwa === 'NaN') {
-    alert('You have to input some grades to calculate the GWA.');
+  if (gwa === "NaN") {
+    alert("Please input No. of Units and Grade.");
   } else {
     document.querySelector(".gwa").innerText = `GWA: ${gwa}`;
   }
-
 });
 
 /* Himo og object na naay subject.name, subject.units, subject.grade. Every tr should be looped. */
