@@ -13,7 +13,6 @@ body {
   font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
     Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
   text-transform: uppercase;
-  padding: 10% 0;
 }
 
 .container {
@@ -21,8 +20,12 @@ body {
   flex-direction: column;
   gap: 1rem;
   align-items: center;
-  margin: 0 5%;
-  font-size: .75rem;
+  margin: 10% 5%;
+  font-size: 0.75rem;
+}
+
+input[type="text"] {
+  text-transform: uppercase;
 }
 
 input[type="number"],
@@ -77,8 +80,20 @@ td:focus-within {
   border-collapse: collapse;
 }
 
+.tbl-buttons {
+  display: flex;
+  align-items: center;
+  /* outline: 1px solid red; */
+  padding-bottom: 16px;
+  gap: 1rem;
+}
+
+#remove-row-btn {
+  /* margin-bottom: 16px; */
+}
+
 #add-row-btn {
-  margin-bottom: 16px;
+  /* margin-bottom: 16px; */
 }
 
 /*
@@ -105,20 +120,24 @@ td:focus-within {
   touch-action: manipulation;
 } */
 
-#add-row-btn:hover {
+#add-row-btn:hover,
+#remove-row-btn:hover {
   background-color: rgb(249, 250, 251);
 }
 
-#add-row-btn:focus {
+#add-row-btn:focus,
+#remove-row-btn:hover {
   outline: 2px solid transparent;
   outline-offset: 2px;
 }
 
-#add-row-btn:focus-visible {
+#add-row-btn:focus-visible,
+#remove-row-btn:focus-visible {
   box-shadow: none;
 }
 
-.plus-button {
+.plus-button,
+.minus-button {
   border: 2px solid lightgrey;
   background-color: #fff;
   font-size: 16px;
@@ -151,7 +170,9 @@ td:focus-within {
 }
 
 .plus-button:after,
-.plus-button:before {
+.plus-button:before,
+.minus-button:after,
+.minus-button:before {
   content: "";
   display: block;
   background-color: grey;
@@ -161,7 +182,8 @@ td:focus-within {
   transform: translate(-50%, -50%);
 }
 
-.plus-button:after {
+.plus-button:after,
+.minus-button:after {
   height: 0.2em;
   width: 1em;
 }
@@ -181,6 +203,10 @@ td:focus-within {
 
 #calculate-gwa-btn {
   width: 100%;
+}
+
+#calculate-gwa-btn,
+#clear-btn {
   display: inline-block;
   outline: none;
   cursor: pointer;
@@ -195,7 +221,31 @@ td:focus-within {
   text-align: center;
 }
 
-#calculate-gwa-btn:hover {
+#calculate-gwa-btn:hover,
+#clear-btn:hover {
   background-color: #005fb2;
   border-color: #005fb2;
+}
+
+@media (min-width: 640px) {
+  .container {
+    font-size: 1rem;
+  }
+}
+
+@media screen and (max-width: 640px) {
+  body {
+    padding: 64px 0;
+    /* background-color: red; */
+  }
+
+  .container {
+    margin: 64px 5%;
+    overflow-y: scroll;
+  }
+
+  .minus-button,
+  .plus-button {
+    font-size: 0.75rem;
+  }
 }
