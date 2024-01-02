@@ -80,6 +80,13 @@ td:focus-within {
   border-collapse: collapse;
 }
 
+.subject-name > td:nth-child(1) > input::placeholder {
+  color: rgb(185, 185, 185);
+  opacity: 1;
+}
+
+/* .subject-name > td:nth-child(1) > input::-ms-input-placeholder */
+
 .tbl-buttons {
   display: flex;
   align-items: center;
@@ -215,21 +222,25 @@ td:focus-within {
   border-radius: 0.25rem;
   border: 1px solid #0070d2;
   color: #fff;
-  /* font-size: 13px; */
   line-height: 30px;
   font-weight: 400;
   text-align: center;
 }
 
-#calculate-gwa-btn:hover,
-#clear-btn:hover {
-  background-color: #005fb2;
-  border-color: #005fb2;
+.gwa {
+  font-weight: 500;
+  color:rgb(54, 54, 54)
 }
 
 @media (min-width: 640px) {
   .container {
     font-size: 1rem;
+  }
+
+  #calculate-gwa-btn:hover,
+  #clear-btn:hover {
+    background-color: #005fb2;
+    border-color: #005fb2;
   }
 }
 
@@ -239,8 +250,8 @@ td:focus-within {
     /* background-color: red; */
   }
 
-  #calculate-gwa-btn:hover,
-  #clear-btn:hover {
+  #calculate-gwa-btn:active,
+  #clear-btn:active {
     background-color: #005fb2;
     border-color: #005fb2;
   }
