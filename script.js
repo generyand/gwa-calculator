@@ -12,6 +12,7 @@ addRowBtn.addEventListener("click", () => {
   const table = document.getElementById("table");
   const row = table.insertRow();
   row.setAttribute("id", `subject-${tableRows.length + 1}`);
+  row.setAttribute("class", 'subject-name');
   const cell1 = row.insertCell();
   const cell2 = row.insertCell();
   const cell3 = row.insertCell();
@@ -41,6 +42,7 @@ clearBtn.addEventListener("click", () => {
     document.querySelector(`#subject-${i} > td:nth-child(3) > input`).value =
       "";
   }
+  document.querySelector(".gwa").innerText = `GWA: 0.00`;
 });
 
 /* Calculate GWA */
